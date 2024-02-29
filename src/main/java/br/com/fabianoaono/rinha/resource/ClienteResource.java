@@ -41,7 +41,7 @@ public class ClienteResource {
     @Path("/{id}/transacoes")
     public Response createTransacao(@PathParam("id") Long clienteId, Transacao transacao) {
 
-        Cliente cliente = clienteRepository.findById(clienteId);
+        Cliente cliente = clienteRepository.findById(clienteId, LockModeType.PESSIMISTIC_WRITE);
 
         if (cliente == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
@@ -87,7 +87,7 @@ public class ClienteResource {
     @Path("/{id}/extrato")
     public Response getExtrato(@PathParam("id") Long clienteId) {
 
-        Cliente cliente = clienteRepository.findById(clienteId, LockModeType.PESSIMISTIC_WRITE);
+        Cliente cliente = clienteRepository.findById(clienteId);
         if (cliente == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
