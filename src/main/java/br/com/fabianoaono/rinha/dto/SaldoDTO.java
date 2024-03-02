@@ -1,7 +1,10 @@
 package br.com.fabianoaono.rinha.dto;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
+
 import java.time.LocalDateTime;
 
+@RegisterForReflection
 public class SaldoDTO {
 
     private int total;

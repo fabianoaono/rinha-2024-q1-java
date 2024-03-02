@@ -1,7 +1,10 @@
 package br.com.fabianoaono.rinha.dto;
 
+import io.quarkus.runtime.annotations.RegisterForReflection;
+
 import java.util.List;
 
+@RegisterForReflection
 public class ExtratoDTO {
     private SaldoDTO saldoDTO;
     private List<TransacaoDTO> ultimasTransacoes;
