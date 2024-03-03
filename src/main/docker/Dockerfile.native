@@ -3,7 +3,6 @@
 #
 # Before building the container image run:
 #
-# ./mvnw package -Dnative "-Dnative.target.os=linux
 # ./mvnw package -Dnative -DskipTests "-Dquarkus.native.container-build=true" "-Dquarkus.native.builder-image=graalvm"
 #
 # Then, build the image with:
